@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Svenique Studio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="icon" href="assets/logo.svg" type="image/png">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            position: relative;
+            background-color: #eeeeee; 
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('pozadina.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.2; 
+            z-index: -1; 
+        }
+        .navbar {
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            margin: 0;
+            background-color: #000000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+        }
+        .navbar-brand img {
+            width: 100px;
+        }
+        .navbar-title img {
+            width: 150px;
+            display: inline-block;
+        }
+        .navbar-nav {
+            margin-left: auto;
+        }
+        .navbar-nav .nav-link {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: #EA2B80 !important;
+            letter-spacing: 1px;
+            margin: 0 10px;
+        }
+        h2 {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 26px;
+            font-weight: bold;
+            color: #EA2B80;
+            text-transform: uppercase;
+        }
+        p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+        }
+        .video-container {
+            width: 100%;
+            height: auto;
+        }
+        .gallery img {
+            width: 100%;
+            padding: 5px;
+        }
+        .container-fluid {
+            padding: 0;
+            margin: 0;
+        }
+        .footer-basic {
+        padding:40px 0;
+        background-color:#000000;
+        color:#EA2B80;
+        }
+
+        .footer-basic ul {
+        padding:0;
+        list-style:none;
+        text-align:center;
+        font-size:18px;
+        line-height:1.6;
+        margin-bottom:0;
+        }
+
+        .footer-basic li {
+        padding:0 10px;
+        }
+
+        .footer-basic ul a {
+        color:inherit;
+        text-decoration:none;
+        opacity:0.8;
+        }
+
+        .footer-basic ul a:hover {
+        opacity:1;
+        }
+
+        .footer-basic .social {
+        text-align:center;
+        padding-bottom:25px;
+        }
+
+        .footer-basic .social > a {
+        font-size:24px;
+        width:40px;
+        height:40px;
+        line-height:40px;
+        display:inline-block;
+        text-align:center;
+        border-radius:50%;
+        border:1px solid #EA2B80;
+        margin:0 8px;
+        color:inherit;
+        opacity:0.75;
+        }
+
+        .footer-basic .social > a:hover {
+        opacity:0.9;
+        }
+
+        .footer-basic .copyright {
+        margin-top:15px;
+        text-align:center;
+        font-size:13px;
+        color:#aaa;
+        margin-bottom:0;
+        }
+        .carousel-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .carousel {
+            width: 80%;
+            max-width: 700px;
+        }
+        .carousel-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        @media (max-width: 992px) {
+            .navbar {
+                padding: 5px;
+            }
+            .navbar-brand img {
+                width: 80px;
+            }
+            .navbar-title img {
+                width: 120px;
+            }
+            .navbar-nav .nav-link {
+                font-size: 16px;
+                margin: 0 5px;
+            }
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+                padding: 5px;
+            }
+            .navbar-title img {
+                width: 100px;
+            }
+        }
+            .contact-info {
+                text-align: center;
+                font-size: 14px;
+                margin-top: 10px;
+                color: #aaa;
+            }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="logo.svg" alt="Logo"></a>
+            <div class="navbar-title"><img src="salon_naziv.png" alt="Naziv salona"></div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#o-nama">O NAMA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#usluge">USLUGE</a></li>
+                    <li class="nav-item"><a class="nav-link" href="galerija_radova.html">GALERIJA RADOVA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#osoblje">OSOBLJE</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kontakt">KONTAKT</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container-fluid mt-5 pt-5">
+        <video class="video-container" autoplay loop>
+            <source src="video.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+    <div class="container mt-4" id="o-nama">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h2>O NAMA</h2>
+                <p>Svenique Studio nije samo kozmetički salon – to je mjesto gdje ljepota postaje umjetnost, a svaka žena dobiva tretman prilagođen njezinim željama i potrebama. Kroz individualan pristup, naš tim se trudi naglasiti vaše najljepše karakteristike i pružiti vam iskustvo u kojem ćete se osjećati posebno i njegovano. Koristimo najkvalitetnije proizvode i najnovije tehnike kako bismo osigurali besprijekorne rezultate koji traju. U našoj ponudi nalaze se razni tretmani lica, profesionalno šminkanje, moderne frizure, kao i manikura i pedikura prilagođena vašem stilu. </p>
+                <p>Svaki tretman osmišljen je kako bi vam pružio osjećaj luksuza i opuštanja, bilo da se pripremate za posebnu priliku ili jednostavno želite malo vremena za sebe. U Svenique Studiju vjerujemo da ljepota dolazi iznutra, a naš cilj je da svaka klijentica izađe iz salona s osmijehom i samopouzdanjem. Naš salon odiše toplinom i elegancijom, stvarajući ugodno okruženje u kojem ćete se osjećati kao kod kuće. Osim vrhunskih usluga, nudimo i stručne savjete o njezi kože, kose i noktiju kako biste i kod kuće mogli održavati postignute rezultate. Posjetite nas i uvjerite se zašto je Svenique Studio omiljeni kutak za njegu i ljepotu mnogih zadovoljnih klijentica! </p>
+            </div>
+            <div class="col-md-6">
+                <img src="onama.JPEG" class="img-fluid" alt="O nama">
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="container mt-4" id="usluge">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h2>USLUGE</h2>
+                <p>U Svenique Studiju nudimo širok spektar profesionalnih usluga kako bismo vam omogućili vrhunsku njegu i besprijekoran izgled. Naš tim stručnjaka pobrinut će se za vašu kosu uz bojanje, stiliziranje, šišanje i feniranje, koristeći visokokvalitetne proizvode koji njeguju i štite vašu kosu. Ako želite dodatnu dužinu i volumen, tu je i ugradnja ekstenzija, prilagođena vašem prirodnom izgledu i željama.</p>
+                <p>Za posebne prilike ili svakodnevni glamur, nudimo profesionalno šminkanje koje će naglasiti vašu prirodnu ljepotu i osigurati dugotrajan, besprijekoran izgled. Naša njega lica uključuje facial peeling, koji dubinski čisti kožu, uklanja mrtve stanice i vraća joj svježinu i sjaj. Uz to, masaže lica pružaju osjećaj opuštenosti, poboljšavaju cirkulaciju i doprinose zdravlju kože.</p>
+                <p>Njega ruku i stopala također je važan dio naše ponude, pa kod nas možete uživati u profesionalnoj manikuri i pedikuri, uz širok izbor klasičnih i trajnih lakova, kao i modernih nail art tehnika. Svaka usluga u Svenique Studiju osmišljena je kako bi vam pružila luksuzno iskustvo i osjećaj potpunog zadovoljstva. Posjetite nas i prepustite se rukama iskusnih stručnjaka koji će istaknuti vašu ljepotu na najbolji način!</p>
+                <p>Cijene naših usluga dostupne su na našem <a href="cjenik.png" target="_blank" style="color: #EA2B80;">cjeniku</a>.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="usluge.JPEG" class="img-fluid" alt="Usluge">
+            </div>
+        </div>
+    </div>
+
+    <br><br><br><br>
+    
+    <div class="container osoblje-container text-center mt-5" id="osoblje">
+        <h2>Osoblje</h2>
+        <p>U našem studiju možete upoznati talentirani tim stručnjaka koji s ljubavlju i predanošću brinu o vašoj ljepoti. Sven, majstor za kosu, specijaliziran je za bojanje, šišanje i stiliziranje, uvijek prateći najnovije trendove kako bi vaš izgled bio svjež i moderan. Tara, naša stručnjakinja za šminkanje i njegu lica, pomoći će vam da zablistate, bilo da se pripremate za posebnu priliku ili jednostavno želite istaknuti svoju prirodnu ljepotu. Ilenia je zadužena za manikuru, pedikuru i masaže lica, pružajući vrhunsku njegu i opuštajuće tretmane koji će vas osvježiti i uljepšati.
+
+            Naš tim ne samo da ima bogato iskustvo, već i strast prema onome što rade, uvijek pristupajući svakom klijentu s osmijehom i profesionalizmom. Posjetite nas i uvjerite se u toplinu, stručnost i predanost našeg tima – vaše zadovoljstvo nam je na prvom mjestu!</p>
+        <div class="carousel-container d-flex justify-content-center">
+            <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="slika1.jpg" class="d-block w-100" alt="Slika 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="slika2.jpg" class="d-block w-100" alt="Slika 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="slika3.jpg" class="d-block w-100" alt="Slika 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="slika4.jpg" class="d-block w-100" alt="Slika 4">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="slika5.jpg" class="d-block w-100" alt="Slika 5">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="slika6.jpg" class="d-block w-100" alt="Slika 6">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="slika7.jpg" class="d-block w-100" alt="Rad 7">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <br><br>
+
+    <div class="footer-basic" id="kontakt">
+        <footer>
+            <div class="social">
+                <a href="#"><i class="icon ion-social-instagram"></i></a>
+                <a href="#"><i class="icon ion-social-snapchat"></i></a>
+                <a href="#"><i class="icon ion-social-twitter"></i></a>
+                <a href="#"><i class="icon ion-social-facebook"></i></a>
+            </div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Početna</a></li>
+                <li class="list-inline-item"><a href="#o-nama">O nama</a></li>
+                <li class="list-inline-item"><a href="#usluge">Usluge</a></li>
+                <li class="list-inline-item"><a href="/galerija_radova.html">Galerija radova</a></li>
+                <li class="list-inline-item"><a href="#osoblje">Osoblje</a></li>
+            </ul>
+            <p class="copyright">Svenique Studio © 2025</p>
+            <p class="contact-info">📞 Telefon: +385 91 123 4567 | ✉️ Email: <a href="mailto:info@svenique.com" style="color: #EA2B80; font-weight: 200;">info@svenique.com</a></p>
+        </footer>
+    </div>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var video = document.querySelector(".video-container");
+            video.muted = false;
+            video.play();
+        });
+    </script>
+</body>
+</html>
